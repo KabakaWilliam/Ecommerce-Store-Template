@@ -1,3 +1,26 @@
+@import url("https://use.typekit.net/uoy3iov.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "textbook-new", sans-serif;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.styleScrollBox {
+  box-shadow: -200px -7px 121px 2px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: -200px -7px 121px 2px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: -200px -7px 121px 2px rgba(0, 0, 0, 0.51);
+}
