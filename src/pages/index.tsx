@@ -4,7 +4,16 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
-import { CancelIcon, MeshkiLogo } from "../Components/Icons";
+import {
+  AccountIcon,
+  BagIcon,
+  CancelIcon,
+  ChevronDown,
+  HeartIcon,
+  MeshkiLogo,
+  SearchIcon,
+} from "../Components/Icons";
+import Navbar from "~/Components/Navbar/Navbar";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -18,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Banner />
-        <NavBar />
+        <Navbar />
         <HeroBanner />
         <FeaturedSection />
 
@@ -33,22 +42,6 @@ export default Home;
 const Banner = () => {
   return (
     <div className="flex h-8 w-full  items-center justify-center bg-[#e3d4ce]    "></div>
-  );
-};
-
-const NavBar = () => {
-  return (
-    <nav className="sticky top-0 z-50 flex h-[72px] w-full items-center bg-white pl-0 md:pl-4">
-      <div className="flex h-6 w-[255px] items-center justify-center">
-        <div className="h-full w-[134px]">
-          <MeshkiLogo />
-        </div>
-      </div>
-      <section className="flex h-[48px] w-[958px] items-center gap-x-10 font-light text-[#1b1918]">
-        <div>New</div>
-        <div>Dresses</div>
-      </section>
-    </nav>
   );
 };
 

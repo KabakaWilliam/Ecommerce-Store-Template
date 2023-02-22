@@ -34,3 +34,99 @@ export const MeshkiLogo = () => {
     </svg>
   );
 };
+
+export const SearchIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+      />
+    </svg>
+  );
+};
+
+export const HeartIcon = () => {
+  return (
+    <svg
+      aria-label="heart icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.501 5.501 0 10-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78v0z"
+        vector-effect="non-scaling-stroke"
+        stroke="currentColor"
+      ></path>
+    </svg>
+  );
+};
+
+export const AccountIcon = () => {
+  return (
+    <svg
+      aria-label="account icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 21v-.528a4 4 0 00-2.211-3.578L12 14l-5.789 2.894A4 4 0 004 20.472V21M12 11a4 4 0 100-8 4 4 0 000 8z"
+        vector-effect="non-scaling-stroke"
+        stroke="currentColor"
+      ></path>
+    </svg>
+  );
+};
+
+export const BagIcon = () => {
+  return (
+    <svg
+      aria-label="bag icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 8h18v8a5 5 0 01-5 5H8a5 5 0 01-5-5V8zM16 8V6a4 4 0 00-8 0v2M21 8A9 9 0 113 8"
+        vector-effect="non-scaling-stroke"
+        stroke="currentColor"
+      ></path>
+      <circle cx="12" cy="13" r="1" fill="currentColor"></circle>
+    </svg>
+  );
+};
+
+export const ChevronDown = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+  );
+};
