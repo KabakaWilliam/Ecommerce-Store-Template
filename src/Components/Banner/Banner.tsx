@@ -1,6 +1,7 @@
 export const Banner = () => {
   return (
     <div className="flex h-8 w-full  items-center justify-center bg-[#e3d4ce] ">
+      <MobileBanner />
       <div className="hidden  h-full w-[10%]  md:block"></div>
       <div className="hidden h-full w-[100%] gap-x-2 overflow-x-scroll text-[12px] md:flex md:w-[80%] md:items-center md:justify-center">
         <div className="w-full  border-r border-r-black pr-2 font-bold md:w-max">
@@ -25,6 +26,31 @@ export const Banner = () => {
         </div>
       </div>
       <div className="hidden h-full w-[10%] md:block"></div>
+    </div>
+  );
+};
+
+const MobileBanner = () => {
+  // const temp = [1, 2, 3, 4, 5, 6, 7];
+  // return (
+  //   <div className=" flex h-full w-screen overflow-y-scroll bg-[#e3d4ce]">
+  //     {temp.map((item, index) => (
+  //       <div className="" key={index}>
+  //         <div className="scrollText h-full w-max border">
+  //           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo nihil
+  //           quia quam laudantium vero voluptatum possimus. Quod, impedit veniam.
+  //           Odit rem perferendis magni quod quae nesciunt quas totam neque
+  //           minima.
+  //         </div>
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
+  return (
+    <div className="text-[12px] font-bold ">
+      {" "}
+      BRIDAL COLLECTION:{" "}
+      <span className="font-light underline">FREE EXPRESS SHIPPING</span>
     </div>
   );
 };
