@@ -52,9 +52,8 @@ const DressCard = () => {
 
         <div className="scrollbar-hide  flex h-9 w-full overflow-x-scroll border ">
           {sizes.map((size, index) => (
-            <div>
+            <div key={index}>
               <button
-                key={index}
                 className={
                   index == 1
                     ? `styleScrollBox h-9 w-[52px] border-r text-[12px] text-[#1b1918]`

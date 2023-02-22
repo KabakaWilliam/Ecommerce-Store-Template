@@ -17,6 +17,7 @@ import NavBar from "~/Components/Navbar/Navbar";
 import { Banner } from "~/Components/Banner/Banner";
 import { useRecoilState } from "recoil";
 import AdSideBannerState from "~/Atoms/AdSideBannerAtom";
+import { MouseEvent } from "react";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -65,14 +66,16 @@ const AdSideForm = () => {
   const [AdBannerVisible, setAdBannerVisible] =
     useRecoilState(AdSideBannerState);
 
-  const removeBanner = (e: any) => {
+  const removeBanner = (
+    e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>
+  ) => {
     e.preventDefault();
     setAdBannerVisible(false);
   };
   return (
     <div className="fixed left-3 top-[30%] hidden bg-[#e0d5cf] px-8 pb-9 pt-12 md:block md:h-[466px]  md:w-[300px]     ">
       <div className="absolute bottom-[93%] left-[90%]">
-        <div onClick={removeBanner} className="cursor-pointer">
+        <div onClick={(e) => removeBanner(e)} className="cursor-pointer">
           <CancelIcon />
         </div>
       </div>
