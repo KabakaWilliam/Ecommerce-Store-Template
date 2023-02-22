@@ -130,7 +130,7 @@ const PageBreak = () => {
 const FeaturedSection = () => {
   return (
     <div className="h-[2137px] w-full">
-      <section className="flex h-max w-full flex-col items-center justify-center gap-y-2 p-[16px] text-sm font-light leading-10 md:h-[259px]  md:text-sm">
+      <section className="flex h-max w-full flex-col items-center justify-center gap-y-2 p-[16px] pt-10 text-sm font-light leading-10 md:h-[259px] md:pt-0  md:text-sm">
         <p>Wide eyes, wild hearts, seasonal flowers, and champagne towers.</p>
         <p>
           This year we are saying I do by toying with tradition—breaking away
