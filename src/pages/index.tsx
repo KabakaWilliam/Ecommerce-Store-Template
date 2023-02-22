@@ -14,6 +14,7 @@ import {
   SearchIcon,
 } from "../Components/Icons";
 import NavBar from "~/Components/Navbar/Navbar";
+import { Banner } from "~/Components/Banner/Banner";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -26,8 +27,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Banner />
-        <NavBar />
+        {/* <Banner /> */}
+        {/* <NavBar /> */}
         <HeroBanner />
         <FeaturedSection />
 
@@ -38,12 +39,6 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-const Banner = () => {
-  return (
-    <div className="flex h-8 w-full  items-center justify-center bg-[#e3d4ce]    "></div>
-  );
-};
 
 const HeroBanner = () => {
   return (
