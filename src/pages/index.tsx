@@ -13,7 +13,7 @@ import {
   MeshkiLogo,
   SearchIcon,
 } from "../Components/Icons";
-import Navbar from "~/Components/Navbar/Navbar";
+import NavBar from "~/Components/Navbar/Navbar";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Banner />
-        <Navbar />
+        <NavBar />
         <HeroBanner />
         <FeaturedSection />
 
