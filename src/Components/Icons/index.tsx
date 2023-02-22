@@ -54,6 +54,25 @@ export const SearchIcon = () => {
   );
 };
 
+export const ThreeBarsIcon = () => {
+  return (
+    <svg
+      aria-label="hamburger menu icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2 20h20M2 4h20M2 12h20"
+        vector-effect="non-scaling-stroke"
+        stroke="currentColor"
+      ></path>
+    </svg>
+  );
+};
+
 export const HeartIcon = () => {
   return (
     <svg

@@ -24,3 +24,7 @@ body {
   -webkit-box-shadow: -200px -7px 121px 2px rgba(0, 0, 0, 0.51);
   -moz-box-shadow: -200px -7px 121px 2px rgba(0, 0, 0, 0.51);
 }
+
+.MiddleNavOptionStyle {
+  @apply cursor-pointer;
+}

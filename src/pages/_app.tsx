@@ -6,16 +6,19 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 import NavBar from "~/Components/Navbar/Navbar";
+import { RecoilRoot } from "recoil";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <NavBar />
-      <Component {...pageProps} />
-    </SessionProvider>
+    <RecoilRoot>
+      <SessionProvider session={session}>
+        <NavBar />
+        <Component {...pageProps} />
+      </SessionProvider>
+    </RecoilRoot>
   );
 };
 

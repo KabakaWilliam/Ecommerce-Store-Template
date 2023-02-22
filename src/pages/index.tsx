@@ -15,9 +15,13 @@ import {
 } from "../Components/Icons";
 import NavBar from "~/Components/Navbar/Navbar";
 import { Banner } from "~/Components/Banner/Banner";
+import { useRecoilState } from "recoil";
+import AdSideBannerState from "~/Atoms/AdSideBannerAtom";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const [AdBannerVisible, setAdBannerVisible] =
+    useRecoilState(AdSideBannerState);
 
   return (
     <>
@@ -27,12 +31,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* <Banner /> */}
-        {/* <NavBar /> */}
         <HeroBanner />
         <FeaturedSection />
 
-        <AdSideForm />
+        {AdBannerVisible && <AdSideForm />}
       </main>
     </>
   );
@@ -42,7 +44,7 @@ export default Home;
 
 const HeroBanner = () => {
   return (
-    <div className="h-[1004px] w-full ">
+    <div className="h-[528px] w-full  md:h-[1004px] ">
       <picture>
         <source
           media="(max-width: 768px)"
@@ -60,10 +62,17 @@ const HeroBanner = () => {
 };
 
 const AdSideForm = () => {
+  const [AdBannerVisible, setAdBannerVisible] =
+    useRecoilState(AdSideBannerState);
+
+  const removeBanner = (e: any) => {
+    e.preventDefault();
+    setAdBannerVisible(false);
+  };
   return (
     <div className="fixed left-3 top-[30%] hidden bg-[#e0d5cf] px-8 pb-9 pt-12 md:block md:h-[466px]  md:w-[300px]     ">
       <div className="absolute bottom-[93%] left-[90%]">
-        <div className="cursor-pointer">
+        <div onClick={removeBanner} className="cursor-pointer">
           <CancelIcon />
         </div>
       </div>
@@ -118,7 +127,7 @@ const PageBreak = () => {
 const FeaturedSection = () => {
   return (
     <div className="h-[2137px] w-full">
-      <section className="flex h-[259px] w-full flex-col items-center justify-center gap-y-2 p-[16px] text-sm leading-10">
+      <section className="flex h-max w-full flex-col items-center justify-center gap-y-2 p-[16px] text-sm font-light leading-10 md:h-[259px]  md:text-sm">
         <p>Wide eyes, wild hearts, seasonal flowers, and champagne towers.</p>
         <p>
           This year we are saying I do by toying with tradition—breaking away
@@ -162,6 +171,21 @@ const FeaturedGallerySectionInitial = () => {
       text: "white",
     },
   ];
+
+  const Options2 = [
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0339/6517/files/BEHIND_THE_DESIGN_c0433a57-4e1d-4657-9be8-1e3347fd16fa_1296x.jpg?v=1676326662",
+      title: "Go behind the scenes",
+      text: "white",
+    },
+    {
+      image:
+        "https://cdn.shopify.com/s/files/1/0339/6517/files/BEHIND_THE_DESIGN_2_15917769-d084-4c65-b93b-22e2e0bc8ca3_1296x.jpg?v=1676326670",
+      title: "",
+      text: "black",
+    },
+  ];
   return (
     <section className="h-max w-full">
       <div className="grid h-[703px] w-full  md:grid-cols-3">
@@ -175,6 +199,31 @@ const FeaturedGallerySectionInitial = () => {
                 backgroundImage: `url(${item.image})`,
               }}
               className={`relative h-[98%] w-[98%] cursor-pointer bg-cover bg-center `}
+            >
+              <div
+                className={
+                  item.text == "black"
+                    ? `absolute left-10 bottom-10 border-b border-b-[#292624] font-light uppercase text-[#292624]`
+                    : `absolute left-10 bottom-10 border-b border-b-white font-light uppercase text-white`
+                }
+              >
+                {item.title}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="grid h-max w-full md:grid-cols-2 ">
+        {Options2.map((item, index) => (
+          <div
+            key={index}
+            className="flex h-[586px] w-full items-center justify-center md:w-[50vw] "
+          >
+            <div
+              style={{
+                backgroundImage: `url(${item.image})`,
+              }}
+              className={`relative h-[98%] w-[98%] cursor-pointer bg-black  bg-cover bg-center `}
             >
               <div
                 className={
